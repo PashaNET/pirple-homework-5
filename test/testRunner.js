@@ -1,29 +1,14 @@
+//Dependencies
+const unitTests = require('./unitTests'),
+      apiTests = require('./apiTests');
 
-const lib = require('../app/lib'),
-      assert = require('assert');
 
+//list of tests which will be runned
 let tests = {
-    unit: {}
+    unit: unitTests,
+    api: apiTests
 };
 
-//move to 'unit', test - object with class, 
-tests.unit['functionsForTest.getANumber should return number'] = done => {
-    let value = lib.getANumber();
-    assert.equal(typeof(value), 'number');
-    done();
-}
-
-tests.unit['functionsForTest.getANumber should return 1'] = done => {
-    let value = lib.getANumber();
-    assert.equal(value, 1);
-    done();
-}
-
-tests.unit['functionsForTest.getAString should return string'] = done => {
-    let value = lib.getANumber();
-    assert.equal(typeof(value), 'string');
-    done();
-}
 
 countTests = () => {
     let testQuantity = 0,
